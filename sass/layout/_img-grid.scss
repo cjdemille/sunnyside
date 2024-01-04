@@ -1,0 +1,16 @@
+.img-grid {
+    display: grid;
+    width: 100vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50vw 50vw;
+    gap: 0;
+
+    &__img {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+
+
+}

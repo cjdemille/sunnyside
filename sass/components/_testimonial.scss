@@ -1,0 +1,32 @@
+.testimonial {
+    width: 70%;
+    margin: 8rem auto;
+
+
+    &__img {
+        display: block;
+        margin: 0 auto 3rem;
+        border-radius: 50%;
+        width: 20%
+    }
+
+    &__name {
+        display: block;
+        font-family: 'Fraunces', serif;
+        font-weight: 900;
+        font-size: 1.8rem;
+        letter-spacing: -.13px;
+        text-align: center;
+        margin-top: 3rem;
+    }
+
+    &__title {
+        font-family: 'Barlow', sans-serif;
+        text-align: center;
+        font-size: 1.4rem;
+        letter-spacing: -.1px;
+        display: block;
+        margin-top: 2rem;
+        color: $color-blue-gray;
+    }
+}

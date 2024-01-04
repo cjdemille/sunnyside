@@ -1,0 +1,57 @@
+.footer {
+    background-color: $color-footer-bg;
+    color: $color-footer-text;
+    padding: 8rem 0;
+
+
+    &__logo {
+        width: 50%;
+        display: block;
+        margin: 0 auto;
+        fill: $color-footer-text;
+    }
+
+    &-nav {
+        &__list {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin: 7rem auto;
+            list-style-type: none;
+            font-family: 'Barlow', sans-serif;
+            font-size: 1.8rem;
+        }
+
+
+        &__link {
+            transition: all .3s;
+
+            &:hover {
+                color: $color-white;
+                font-family: 'Barlow', sans-serif;
+                font-size: 1.8rem;
+            }
+        }
+    }
+}
+
+
+.social-links {
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    margin: 3rem auto;
+}
+
+.social__icon {
+    width: 3rem;
+    height: 3rem;
+    fill: $color-footer-text;
+    transition: all .3s;
+
+    &:hover {
+        fill: $color-white;
+        cursor: pointer;
+    }
+
+}
