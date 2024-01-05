@@ -48,6 +48,10 @@
             cursor: pointer;
             fill: $color-soft-red;
         }
+
+        @include respond(med){
+            display: none;
+        }
     }
 
     &__list-holder {
@@ -55,7 +59,7 @@
         justify-content: center;
         align-items: center;
         width: 90vw;
-        height: 40vh;
+        height: 80vh;
         background-color: $color-white;
         box-sizing: border-box;
         position: fixed;
@@ -64,6 +68,15 @@
         clip-path: polygon(0 6%, 93% 6%, 100% 0, 100% 100%, 0 100%);
         z-index: 100;
         transition: all .3s;
+
+        @include respond(med){
+            display: flex;
+            position: relative;
+            height:auto;
+            padding:1rem 0;
+            top:0;
+            right:0;
+        }
     }
 
 
@@ -75,16 +88,30 @@
         height: 100%;
         text-align: center;
         margin-top: 9rem;
+        @include respond(med){
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 0;
+        }
     }
 
     &__link {
         margin: 6rem 0;
         display: block;
 
+        @include respond(med){
+            margin:0 3rem;
+        }
+
         &--link:link,
         &--link:visited {
             color: $color-blue-gray;
             transition: all .3s;
+
+            @include respond(med){
+                color:$color-white;
+            }
         }
 
         &--link:hover {
@@ -96,18 +123,30 @@
             font-family: 'Fraunces', serif;
             font-weight: 900;
             background-color: $color-yellow;
-            padding: 1rem 3rem;
+            padding: .5rem 3rem;
             border-radius: 3rem;
             transition: all .3s;
 
             &:link,
             &:visited {
                 color: $color-dark-desat-blue ;
+
+
+                @include respond(med){
+                    color:$color-dark-desat-blue;
+                    background-color: $color-white;
+                }
             }
 
             &:hover {
                 color: $color-yellow;
                 background-color: $color-dark-desat-blue;
+
+
+                @include respond(med){
+                    color:$color-dark-desat-blue;
+                    background-color: rgba($color-white , .7);
+                }
             }
         }
     }
@@ -119,4 +158,11 @@
     background-color: transparent;
     width: 0;
     transition: all .3s;
+
+
+    @include respond(med){
+        width:inherit;
+        color:inherit;
+        background-color: inherit;
+    }
 }

@@ -1,9 +1,10 @@
 .services {
     width: 100vw;
-
+    max-width: 70rem;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 100vw);
+    grid-template-rows: repeat(6, 60rem);
     grid-template-areas:
         'transform-img'
         'transform'
@@ -14,35 +15,27 @@
     gap: 0;
 
     @include respond(med) {
-        max-width: 12rem;
-        grid-template-columns: 50vw 50vw;
-        grid-template-rows: repeat(3, minmax(50vw, 60rem));
+        width: 100vw;
+        max-width: 143rem;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: repeat(3, 60rem);
         grid-template-areas:
             'transform transform-img'
             'stand-out-img stand-out'
             'graphic-design photography';
     }
 
-    @include respond(lg) {
-        width: 75vw;
-        grid-template-columns: 50vw 50vw;
-        grid-template-rows: repeat(3, minmax(50vw, 60rem));
-        grid-template-areas:
-            'transform transform-img'
-            'stand-out-img stand-out'
-            'graphic-design photography';
-    }
 
     &__box__content {
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        width: 100vw;
+        width: 100%;
         padding: 4rem;
         text-align: center;
+        max-height: 60rem;
 
         @include respond(med) {
-            width: 100%;
             margin: 0;
             padding: 4rem 8rem;
             text-align: left;
@@ -52,6 +45,7 @@
     }
 
     &__text {
+        width:100%;
         @include respond(med) {
             width: 60%;
             display: block;
@@ -61,9 +55,10 @@
 
     &__img-box {
         overflow: hidden;
-        width: 100vw;
+        width: 100%;
         display: flex;
         justify-content: center;
+        max-height: 60rem;
 
         @include respond(med) {
             width: 100%;
@@ -102,6 +97,11 @@
         border-radius: 3px;
         transition: all .2s;
 
+        @include respond(med) {
+            text-align: left;
+            margin:0;
+        }
+
 
         &--transform {
             background: linear-gradient(to bottom, transparent 50%, rgba($color-yellow, .4) 50%);
@@ -134,52 +134,59 @@
     background: url(../images/mobile/image-graphic-design.jpg);
     background-size: 100%;
     background-position: center -10rem;
-    height: 125vw;
     position: relative;
     z-index: -1;
     text-align: center;
+    width:100%;
+    background-repeat: no-repeat;
 
     @include respond(med) {
-        background: url(../images/desktop/image-graphic-design.jpg);
+        // background: url(../images/desktop/image-graphic-design.jpg);
         max-height: 60rem;
         margin-top: 0;
         background-size: 100%;
         background-repeat: no-repeat;
+       
+    }
+    @include respond(lg) {
+        background: url(../images/desktop/image-graphic-design.jpg);
+
     }
 
 
     &__text {
         color: $color-graphic-design-text;
-        width: 50%;
+        width: 60%;
         margin: 0 auto;
     }
 
     &__content {
         position: absolute;
         bottom: 5rem;
-        padding: 12rem 3rem 5rem;
 
-        @include respond(med) {
-            padding: 0;
-        }
     }
 }
 
 .photography {
     background: url(../images/mobile/image-photography.jpg);
-    background-size: 100%;
-    background-position: center 0rem;
-    margin-top: 10rem;
-    height: 125vw;
+    background-size: cover;
+    background-position: 0 40%;
     text-align: center;
     position: relative;
+    width:100%;
+    background-repeat: no-repeat;
 
     @include respond(med) {
-        background: url(../images/desktop/image-photography.jpg);
+       
         max-height: 60rem;
         margin-top: 0;
         background-size: 100%;
         background-repeat: no-repeat;
+    }
+
+    @include respond(lg) {
+        background: url(../images/desktop/image-photography.jpg);
+
     }
 
     &__text {

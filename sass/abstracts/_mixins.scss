@@ -5,14 +5,14 @@
 
 @mixin respond($breakpoint) {
     @if $breakpoint ==med {
-        @media only screen and (min-width:1317px) {
+        @media only screen and (min-width:1125px) {
             @content
         }
     }
 
 
     @if $breakpoint ==lg {
-        @media only screen and (min-width:1500px) {
+        @media only screen and (min-width:1372px) {
             @content
         }
     }
