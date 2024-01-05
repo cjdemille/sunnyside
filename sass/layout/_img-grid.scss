@@ -9,6 +9,16 @@
         height: 100%;
         margin: 0;
         padding: 0;
+
+        @include respond(med) {
+            width: 100%;
+        }
+
+    }
+
+    @include respond(med) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 45rem;
     }
 
 

@@ -1,6 +1,11 @@
 .testimonial {
     width: 70%;
     margin: 8rem auto;
+    text-align: center;
+
+    @include respond(med) {
+        margin: 8rem 6rem;
+    }
 
 
     &__img {
@@ -29,4 +34,7 @@
         margin-top: 2rem;
         color: $color-blue-gray;
     }
+
+
+
 }

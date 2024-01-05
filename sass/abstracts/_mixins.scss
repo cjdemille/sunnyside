@@ -1,0 +1,19 @@
+// 792
+
+//1024
+
+
+@mixin respond($breakpoint) {
+    @if $breakpoint ==med {
+        @media only screen and (min-width:1317px) {
+            @content
+        }
+    }
+
+
+    @if $breakpoint ==lg {
+        @media only screen and (min-width:1500px) {
+            @content
+        }
+    }
+}

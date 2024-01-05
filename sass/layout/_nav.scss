@@ -4,6 +4,15 @@
     background-position: center;
     min-height: 90vh;
     width: 100%;
+
+    @include respond(med) {
+        background: url(../images/desktop/image-header.jpg) #42bfff;
+        background-size: 100%;
+        background-position: bottom;
+        background-repeat: no-repeat;
+        min-height: 90vh;
+
+    }
 }
 
 .nav-box {
@@ -18,15 +27,96 @@
         width: 12rem;
         height: 3rem;
         fill: $color-white;
+
+        @include respond(med) {
+            width: 17rem;
+
+        }
     }
 
     &__toggle {
         width: 3rem;
         height: 3rem;
         fill: $color-white;
+        position: fixed;
+        top: 3rem;
+        right: 3rem;
+        transition: all .3s;
+        z-index: 100;
+
+        &:hover {
+            cursor: pointer;
+            fill: $color-soft-red;
+        }
     }
 
-    &__list {
-        display: none;
+    &__list-holder {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90vw;
+        height: 40vh;
+        background-color: $color-white;
+        box-sizing: border-box;
+        position: fixed;
+        top: 7rem;
+        right: 4rem;
+        clip-path: polygon(0 6%, 93% 6%, 100% 0, 100% 100%, 0 100%);
+        z-index: 100;
+        transition: all .3s;
     }
+
+
+    &__list {
+        font-family: 'Barlow', sans-serif;
+        font-size: 2rem;
+        line-height: 1.5;
+        list-style: none;
+        height: 100%;
+        text-align: center;
+        margin-top: 9rem;
+    }
+
+    &__link {
+        margin: 6rem 0;
+        display: block;
+
+        &--link:link,
+        &--link:visited {
+            color: $color-blue-gray;
+            transition: all .3s;
+        }
+
+        &--link:hover {
+            color: $color-soft-red;
+        }
+
+        &--btn {
+            font-size: 2rem;
+            font-family: 'Fraunces', serif;
+            font-weight: 900;
+            background-color: $color-yellow;
+            padding: 1rem 3rem;
+            border-radius: 3rem;
+            transition: all .3s;
+
+            &:link,
+            &:visited {
+                color: $color-dark-desat-blue ;
+            }
+
+            &:hover {
+                color: $color-yellow;
+                background-color: $color-dark-desat-blue;
+            }
+        }
+    }
+}
+
+
+.hidden {
+    color: transparent;
+    background-color: transparent;
+    width: 0;
+    transition: all .3s;
 }

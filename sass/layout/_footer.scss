@@ -9,6 +9,10 @@
         display: block;
         margin: 0 auto;
         fill: $color-footer-text;
+
+        @include respond(med) {
+            width: 17rem;
+        }
     }
 
     &-nav {
@@ -20,11 +24,20 @@
             list-style-type: none;
             font-family: 'Barlow', sans-serif;
             font-size: 1.8rem;
+
+            @include respond(med) {
+                width: 40%
+            }
         }
 
 
         &__link {
             transition: all .3s;
+
+            &:link,
+            &:visited {
+                color: $color-footer-text;
+            }
 
             &:hover {
                 color: $color-white;
@@ -41,6 +54,10 @@
     justify-content: space-between;
     width: 50%;
     margin: 3rem auto;
+
+    @include respond(med) {
+        width: 17rem;
+    }
 }
 
 .social__icon {
@@ -54,4 +71,17 @@
         cursor: pointer;
     }
 
+}
+
+
+
+.attribution {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 3rem;
+    font-family: 'Barlow', sans-serif;
+}
+
+.attribution a {
+    color: $color-footer-text;
 }

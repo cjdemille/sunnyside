@@ -1,25 +1,74 @@
 .services {
     width: 100vw;
 
-    &__box {
-        width: 100%;
-        overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(6, 100vw);
+    grid-template-areas:
+        'transform-img'
+        'transform'
+        'stand-out-img'
+        'stand-out'
+        'graphic-design'
+        'photography';
+    gap: 0;
 
-        &__content {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            width: 100vw;
-            padding: 4rem;
+    @include respond(med) {
+        max-width: 12rem;
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: repeat(3, minmax(50vw, 60rem));
+        grid-template-areas:
+            'transform transform-img'
+            'stand-out-img stand-out'
+            'graphic-design photography';
+    }
+
+    @include respond(lg) {
+        width: 75vw;
+        grid-template-columns: 50vw 50vw;
+        grid-template-rows: repeat(3, minmax(50vw, 60rem));
+        grid-template-areas:
+            'transform transform-img'
+            'stand-out-img stand-out'
+            'graphic-design photography';
+    }
+
+    &__box__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100vw;
+        padding: 4rem;
+        text-align: center;
+
+        @include respond(med) {
+            width: 100%;
+            margin: 0;
+            padding: 4rem 8rem;
+            text-align: left;
         }
 
+
     }
+
+    &__text {
+        @include respond(med) {
+            width: 60%;
+            display: block;
+        }
+    }
+
 
     &__img-box {
         overflow: hidden;
         width: 100vw;
         display: flex;
         justify-content: center;
+
+        @include respond(med) {
+            width: 100%;
+            height: auto;
+        }
     }
 
     &__image {
@@ -27,6 +76,11 @@
         margin: 0 auto;
         display: block;
         overflow: hidden;
+
+        @include respond(med) {
+            width: 100%;
+            height: auto;
+        }
     }
 
     &__link {
@@ -80,13 +134,24 @@
     background: url(../images/mobile/image-graphic-design.jpg);
     background-size: 100%;
     background-position: center -10rem;
-    // margin-top: -10rem;
-    min-height: 125vw;
+    height: 125vw;
     position: relative;
     z-index: -1;
+    text-align: center;
+
+    @include respond(med) {
+        background: url(../images/desktop/image-graphic-design.jpg);
+        max-height: 60rem;
+        margin-top: 0;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
+
 
     &__text {
         color: $color-graphic-design-text;
+        width: 50%;
+        margin: 0 auto;
     }
 
     &__content {
@@ -94,6 +159,9 @@
         bottom: 5rem;
         padding: 12rem 3rem 5rem;
 
+        @include respond(med) {
+            padding: 0;
+        }
     }
 }
 
@@ -103,11 +171,21 @@
     background-position: center 0rem;
     margin-top: 10rem;
     height: 125vw;
-
+    text-align: center;
     position: relative;
+
+    @include respond(med) {
+        background: url(../images/desktop/image-photography.jpg);
+        max-height: 60rem;
+        margin-top: 0;
+        background-size: 100%;
+        background-repeat: no-repeat;
+    }
 
     &__text {
         color: $color-photography-text;
+        width: 50%;
+        margin: 0 auto;
     }
 
     &__content {
@@ -115,4 +193,29 @@
         bottom: 5rem;
 
     }
+}
+
+
+.transform {
+    grid-area: transform;
+}
+
+.transform__img {
+    grid-area: transform-img;
+}
+
+.stand-out {
+    grid-area: stand-out
+}
+
+.stand-out__img {
+    grid-area: stand-out-img
+}
+
+.graphic-design {
+    grid-area: graphic-design;
+}
+
+.photography {
+    grid-area: photography;
 }

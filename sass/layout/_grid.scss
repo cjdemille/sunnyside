@@ -1,22 +1,8 @@
 .grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(6, 100vw);
-    gap: 0;
-    width: 100vw;
-}
+    
 
-
-.services__image {
-    height: 100%;
-    margin: 0 auto;
-    display: block;
-    overflow: hidden;
-}
-
-.services__img-box {
-    overflow: hidden;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
+    @include respond(med) {
+        grid-template-columns: 2fr;
+        grid-template-rows: repeat(3, 100vw);
+    }
 }
