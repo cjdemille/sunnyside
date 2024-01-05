@@ -45,7 +45,8 @@
     }
 
     &__text {
-        width:100%;
+        width: 100%;
+
         @include respond(med) {
             width: 60%;
             display: block;
@@ -99,7 +100,7 @@
 
         @include respond(med) {
             text-align: left;
-            margin:0;
+            margin: 0;
         }
 
 
@@ -137,7 +138,7 @@
     position: relative;
     z-index: -1;
     text-align: center;
-    width:100%;
+    width: 100%;
     background-repeat: no-repeat;
 
     @include respond(med) {
@@ -146,8 +147,9 @@
         margin-top: 0;
         background-size: 100%;
         background-repeat: no-repeat;
-       
+
     }
+
     @include respond(lg) {
         background: url(../images/desktop/image-graphic-design.jpg);
 
@@ -173,11 +175,11 @@
     background-position: 0 40%;
     text-align: center;
     position: relative;
-    width:100%;
+    width: 100%;
     background-repeat: no-repeat;
 
     @include respond(med) {
-       
+
         max-height: 60rem;
         margin-top: 0;
         background-size: 100%;
